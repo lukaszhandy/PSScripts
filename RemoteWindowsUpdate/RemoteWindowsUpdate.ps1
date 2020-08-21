@@ -2,7 +2,7 @@
 $computer+='*'
 $computer
 
-$sessions = New-PSSession -ComputerName (Get-ADComputer -Filter * -searchbase "OU=Użytkownicy,DC=dyrekcja,DC=kzgm"  | where name -Like $computer | select -expandProperty name)
+$sessions = New-PSSession -ComputerName (Get-ADComputer -Filter * | where name -Like $computer | select -expandProperty name)
 
 $sessions
 
