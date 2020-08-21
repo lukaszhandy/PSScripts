@@ -1,12 +1,8 @@
 ﻿$computer = Read-host "podaj nazwę komputera(ów): "
 $computer+='*'
-$computer
-
 $sessions = New-PSSession -ComputerName (Get-ADComputer -Filter * | where name -Like $computer | select -expandProperty name)
-
 $sessions
-
- Invoke-Command -Session $sessions {
+Invoke-Command -Session $sessions {
 #C:\Windows\System32\USOClient.exe StartInteractiveScan    
 #C:\Windows\System32\USOClient.exe startdownload   
 #C:\Windows\System32\USOClient.exe StartInstall 
