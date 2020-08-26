@@ -1,4 +1,5 @@
 ﻿cls
+$seconds=200
 $Date = Get-Date
 do{
 sleep(60);
@@ -10,7 +11,7 @@ $DiffDate = $Date1 - $Date;
 
 $res;
 
-if($res -eq 200)
+if($res -eq $seconds)
 {
   Restart-Computer -Force
 }
